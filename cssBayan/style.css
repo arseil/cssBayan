@@ -1,126 +1,126 @@
 .mem__accordion {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 20px auto;
-    align-items: center;
-    flex-direction: column;
+	font-family: Arial, sans-serif;
+	display: flex;
+	flex-wrap: wrap;
+	margin: 20px auto;
+	align-items: center;
+	flex-direction: column;
 }
 
 .mem__title {
-    font-size: 45px;
+	font-size: 45px;
 }
 
 .mem__item {
-    cursor: pointer;
-    width: 70vh;
+	cursor: pointer;
+	width: 70vh;
 }
 
 .mem__item::before {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #000;
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #000;
 }
 
 .mem__header {
-    width: 100%;
-    transition: all 0.7s ease-in;
+	width: 100%;
+	transition: all 0.7s ease-in;
 }
 
 .mem__image {
-    margin: 10px 0;
-    display: none;
-    height: 50vh;
+	margin: 10px 0;
+	display: none;
+	height: 50vh;
 }
 
 .mem__image img {
-    object-fit: contain;
+	object-fit: contain;
 }
 
 .mem__item:hover .mem__image {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 input {
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
 }
 
 input:checked ~ .mem__image {
-    display: flex;
-    justify-content: center;
-    animation: dropDown 1.7s ease both; 
+	display: flex;
+	justify-content: center;
+	animation: dropDown 1.7s ease both;
 }
 
 @keyframes dropDown {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%); 
-    }
-    50% {
-        transform: translateX(0);
-        opacity: 1; 
-    }
-    100% {
-        transform: translateX(0);  
-    } 
+	0% {
+		opacity: 0;
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+	100% {
+		transform: translateX(0);
+	} 
 }
 
 input:checked ~ .mem__image img{
-    max-width: 100%;
+	max-width: 100%;
 }
 
 input:checked ~ .mem__header {
-    color: #ff6873;
+	color: #ff6873;
 }
 
 .mem__list .mem__item {
-    position: relative;
+	position: relative;
 }
 
 .mem__list .mem__item i {
-    position: absolute;
-    transform: translate(-6px, 0);
-    margin-top: 10px;
-    right: 5px;
+	position: absolute;
+	transform: translate(-6px, 0);
+	margin-top: 10px;
+	right: 5px;
 }
 
 .mem__list .mem__item:first-child i {
-    margin-top: 30px;
+	margin-top: 30px;
 }
 
 .mem__list .mem__item i:before, .mem__list .mem__item i:after {
-    content: "";
-    position: absolute;
-    background-color: #ff6873;
-    width: 3px;
-    height: 9px;
+	content: "";
+	position: absolute;
+	background-color: #ff6873;
+	width: 3px;
+	height: 9px;
 }
 
 .mem__list .mem__item i:before {
-    transform: translate(-2px, 0) rotate(45deg);
-    transition: all 0.7s ease-in;
+	transform: translate(-2px, 0) rotate(45deg);
+	transition: all 0.7s ease-in;
 }
 
 .mem__list .mem__item i:after {
-    transform: translate(2px, 0) rotate(-45deg);
-    transition: all 0.7s ease-in;
+	transform: translate(2px, 0) rotate(-45deg);
+	transition: all 0.7s ease-in;
 }
 
 .mem__list .mem__item input[type=radio] {
-    position: absolute;
-    z-index: 1;
-    opacity: 0; 
+	position: absolute;
+	z-index: 1;
+	opacity: 0;
 }
 
 .mem__list .mem__item input[type=radio]:checked ~ i:before {
-    transform: translate(2px, 0) rotate(45deg); 
+	transform: translate(2px, 0) rotate(45deg);
 }
 
 .mem__list .mem__item input[type=radio]:checked ~ i:after {
-    transform: translate(-2px, 0) rotate(-45deg); 
+	transform: translate(-2px, 0) rotate(-45deg);
 }
