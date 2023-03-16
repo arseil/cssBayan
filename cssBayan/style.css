@@ -33,7 +33,6 @@
     margin: 10px 0;
     display: none;
     height: 50vh;
-    transition: 0.7s ease-in;
 }
 
 .mem__image img {
@@ -103,11 +102,13 @@ input:checked ~ .mem__header {
 }
 
 .mem__list .mem__item i:before {
-    transform: translate(-2px, 0) rotate(45deg); 
+    transform: translate(-2px, 0) rotate(45deg);
+    transition: all 0.7s ease-in;
 }
 
 .mem__list .mem__item i:after {
-    transform: translate(2px, 0) rotate(-45deg); 
+    transform: translate(2px, 0) rotate(-45deg);
+    transition: all 0.7s ease-in;
 }
 
 .mem__list .mem__item input[type=radio] {
