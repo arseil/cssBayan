@@ -1,20 +1,21 @@
 .mem__accordion {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
-    margin: 40px auto;
+    flex-wrap: wrap;
+    margin: 20px auto;
     align-items: center;
     flex-direction: column;
-    transition: all 0.5s ease-in;
 }
+
 .mem__title {
-    text-align: left;
-    transition: all 0.5s ease-in;
+    font-size: 45px;
 }
+
 .mem__item {
     cursor: pointer;
     width: 70vh;
-    transition: all 0.5s ease-in;
 }
+
 .mem__item::before {
     content: '';
     display: block;
@@ -22,56 +23,77 @@
     height: 1px;
     background-color: #000;
 }
+
 .mem__header {
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    transition: all 0.5s ease-in;
+    transition: all 0.7s ease-in;
 }
+
 .mem__image {
     margin: 10px 0;
     display: none;
-    opacity: 0;
-    transition: all 0.5s ease-in;
-}
-.mem__image img {
     height: 50vh;
-    object-fit: contain;
-    transition: all 0.5s ease-in;
+    transition: 0.7s ease-in;
 }
 
-.mem__item:hover  .mem__image {
+.mem__image img {
+    object-fit: contain;
+}
+
+.mem__item:hover .mem__image {
     display: flex;
     justify-content: center;
-    opacity: 1;
-    transition: all 0.5s ease-in;
 }
+
 input {
     cursor: pointer;
     width: 100%;
     height: 100%;
 }
+
 input:checked ~ .mem__image {
     display: flex;
-    opacity: 1;
     justify-content: center;
-    transition: all 0.5s ease-in;
+    animation: dropDown 1.7s ease both; 
 }
+
+@keyframes dropDown {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); 
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1; 
+    }
+    100% {
+        transform: translateX(0);  
+    } 
+}
+
+input:checked ~ .mem__image img{
+    max-width: 100%;
+}
+
 input:checked ~ .mem__header {
     color: #ff6873;
-    transition: all 0.5s ease-in;
 }
+
 .mem__list .mem__item {
     position: relative;
-    transition: all 0.5s ease-in;
 }
+
 .mem__list .mem__item i {
     position: absolute;
     transform: translate(-6px, 0);
-    margin-top: 30px;
+    margin-top: 10px;
     right: 5px;
-    transition: all 0.5s ease-in;
 }
+
+.mem__list .mem__item:first-child i {
+    margin-top: 30px;
+}
+
 .mem__list .mem__item i:before, .mem__list .mem__item i:after {
     content: "";
     position: absolute;
@@ -79,20 +101,25 @@ input:checked ~ .mem__header {
     width: 3px;
     height: 9px;
 }
+
 .mem__list .mem__item i:before {
     transform: translate(-2px, 0) rotate(45deg); 
 }
+
 .mem__list .mem__item i:after {
     transform: translate(2px, 0) rotate(-45deg); 
 }
+
 .mem__list .mem__item input[type=radio] {
     position: absolute;
     z-index: 1;
     opacity: 0; 
 }
+
 .mem__list .mem__item input[type=radio]:checked ~ i:before {
     transform: translate(2px, 0) rotate(45deg); 
 }
+
 .mem__list .mem__item input[type=radio]:checked ~ i:after {
     transform: translate(-2px, 0) rotate(-45deg); 
 }
